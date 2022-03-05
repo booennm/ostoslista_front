@@ -52,17 +52,17 @@ function App() {
     <div>
       <form onSubmit={add}>
         <p>Add item</p>
-        <label>Item description </label>
+        <label>Item description </label><label>amount</label><br/>
         <input value={itemDesc} onChange={e => setItemDesc(e.target.value)}></input>
-        <input type='number' value={itemAmount} onChange={e => setItemAmount(e.target.value)}></input>
+        <input type='number' className='pcs' value={itemAmount} onChange={e => setItemAmount(e.target.value)}></input>
         <button>Add</button>
       </form>
-      <p>Shopping list</p>
+      <h3>Shopping List</h3>
       <ol>
         {items.map(item => (
           <li key={item.id}>
-            {item.description}, {item.amount}kpl
-            <a href='#' className='remove' onClick={() => remove(item.id)}>remove</a>
+            {item.description}, {item.amount} pcs
+            &nbsp;<a href='#' className='remove' onClick={() => remove(item.id)}>X</a>
           </li>
         ))}
       </ol>
