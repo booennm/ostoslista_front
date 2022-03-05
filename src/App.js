@@ -35,7 +35,7 @@ function App() {
 
   function remove(id) {
     const json = JSON.stringify({id:id})
-    axios.post(URL + 'remove.php', json, {
+    axios.post(URL + 'delete.php', json, {
       headers: {
         'Content-Type' : 'application/json'
       }
